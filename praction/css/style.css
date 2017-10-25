@@ -1,0 +1,44 @@
+.container{
+
+}
+
+.container .user{
+    border: 1px solid red;
+    width:30px;
+    height:30px;
+    border-radius:100px;
+    background-color: palegreen;
+    
+}
+.container .user .userfont{
+   cursor: pointer;
+   font-size: 25px;
+   line-height:30px;
+   text-indent: 5px;
+}
+.container .user .userfont .fa-user{
+    color:palevioletred;
+}
+.container .div_log{
+    border: 1px solid  #ccc;
+    padding: 5px 0 5px 8px;
+    width:100px;
+    border-radius: 5px;
+    margin-top: 4px;
+    font-size: 14px;
+    display: none;
+    position: absolute;
+}
+.container .div_log .username{
+    margin-bottom: 10px;
+}
+.container .lettlebox{
+    border: 1px solid brown;
+    display: none;
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    line-height: 26px;
+    position: relative;
+    margin: 25px 0 0 115px;
+}
