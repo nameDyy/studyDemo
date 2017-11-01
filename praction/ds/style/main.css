@@ -398,3 +398,27 @@
     font-weight: normal;
     color: #181818;
  }
+ /* footer */
+ .footer{
+     text-align: center;
+     background-color: #D4D4D4;
+     padding:50px 0;
+     color: #181818;
+     line-height: 24px;
+ }
+ .footer  i{ 
+    font-style:normal;
+    margin:0 5px;
+}
+ .footer a{
+    color: #000;
+ }
+ .footer a:hover{
+    color: #F60 ;
+ }
+ .web{
+     padding-top:30px;
+ }
+ .web img{
+    margin: 0 12px;
+ }
