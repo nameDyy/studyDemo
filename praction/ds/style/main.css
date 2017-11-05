@@ -76,6 +76,7 @@
     margin-right:59px; 
     font:14px/35px  "Microsoft YaHei","微软雅黑";
     color: #FFFFFF;
+    display: inline;  /*处理右浮动右margin双边距bug*/
 }
 .shopText{
     width:87px;
@@ -139,18 +140,22 @@
 /* 商品弹出列表 */
 .shopClass_show{
     background-color: #4593FD;
+    padding-bottom: 1px;   /*IE6   轮播图与左边显示区不齐处理办法*/
     /* position: absolute;
     left:0;
     top:35px;
     width:100%; */
 }
 .shopClass_item{
-    padding: 14px 10px;
+    padding: 13px 10px;   /*轮播图与左边显示区不齐处理办法*/
     border-bottom: #3487F2  solid 1px;
     border-top:#5AA1FE  solid  1px;
+    line-height: 16px;   /*轮播图与左边显示区不齐处理办法*/
 }
 .shopClass_item dt{
-    height: 22px;
+    height: 21px;    /*轮播图与左边显示区不齐处理办法*/
+    line-height: 1;  /*IE6  轮播图与左边显示区不齐处理办法*/
+    overflow: hidden;  /*IE6  轮播图与左边显示区不齐处理办法*/
     background: url(../images/icon/jy.jpg) right  center  no-repeat;
 }
 .shopClass_item  .b{ 
@@ -421,4 +426,7 @@
  }
  .web img{
     margin: 0 12px;
+ }
+ .hr_25{
+     height: 25px;
  }
