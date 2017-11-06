@@ -19,7 +19,7 @@ a{
 
 img{
     border: none;
-    display: block;
+    /* display: block; */
 }
 
 input,select,textarea{
