@@ -7,12 +7,14 @@
 var app = require('../app');
 var debug = require('debug')('myapp:server');
 var http = require('http');
+var opn = require('opn')
 
 /**
  * Get port from environment and store in Express.
  */
 
 var port = normalizePort(process.env.PORT || '3000');
+var url = `http://localhost:${port}/ds/`
 app.set('port', port);
 
 /**
@@ -87,4 +89,6 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+  console.log('> Listening at ' + url + '\n')
+  opn(url)
 }
