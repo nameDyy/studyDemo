@@ -3,16 +3,20 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "set Port=3004 & node ./bin/www"
+    "start": "set Port=3005 & node ./bin/www",
+    "browser-sync": "browser-sync start --proxy localhost:3005 --files praction/**/*.css,praction/**/*.html,praction/**/*.js"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
-    "express": "~4.15.5",
+    "express": "^4.15.5",
     "jade": "~1.11.0",
     "morgan": "~1.9.0",
     "opn": "^5.1.0",
     "serve-favicon": "~2.4.5"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.13"
   }
 }
