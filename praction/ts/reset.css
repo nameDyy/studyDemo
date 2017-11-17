@@ -1,0 +1,48 @@
+/*清除样式*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,a,p,textarea,from,fieldset,table,td,img{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 12px;
+}
+
+ul,ol,li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #666666;
+}
+
+img{
+    border: none;
+    /* display: block; */
+}
+
+input,select,textarea{
+    outline: none;
+    border: none;
+    background: none;
+}
+
+textarea{
+    resize: none;
+}
+
+
+/*清除浮动*/
+.clearfloat:after{
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0;
+}
+.clearfloat{
+    zoom: 1;
+}
+.fl{float: left;}
+.fr{float: right;}

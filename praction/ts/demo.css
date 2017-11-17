@@ -1,0 +1,87 @@
+.header {
+    height: 150px;
+}
+
+.header_top {
+    height: 30px;
+    line-height: 30px;
+    background: rgb(247, 247, 247)
+}
+
+.comWidth {
+    width: 1000px; 
+    height: 100%;
+    margin: 0 auto;
+}
+
+.fav {
+    float: left;
+}
+
+.fav_img {
+    background: url("./images/collection.jpg") no-repeat left;
+    display: inline-block;
+    height: 10px;
+    width: 23px;
+}
+
+.regist {
+    float: right;
+}
+
+.logo {
+    height: 85px;
+
+    background: rgb(29,122,217)
+}
+
+.logimg{
+    padding-top: 12px;
+    float: left;
+}
+
+.search{
+    /* background-color: red; */
+    float: left;
+    margin-left: 220px;
+    height: 34px;
+    width: 450px;
+    margin-top: 24px;
+}
+.ipt{
+    background-color: #fff;
+    width: 340px;
+    height: 30px;
+    float: left;
+}
+.btn{
+    background-color: yellow;
+    width: 100px;
+    height: 30px;
+    float: left;
+}
+.car{
+    background-color: yellow;
+    float: right;
+    width: 148px;
+    margin-top: 25px;
+    height: 30px;
+    line-height: 30px;
+}
+.cart{
+    width: 47px;
+    background: url(images/shapcar.jpg) 8px center  no-repeat;
+    border-right: 1px solid #ccc;
+    padding-left: 41px;
+    float: left;
+}
+.count{
+    width: 50px;
+    background: url(images/sj.jpg) right no-repeat;
+    float: left;
+}
+.nav {
+    height: 35px;
+
+    background: rgb(19,105,192)
+}
