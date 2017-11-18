@@ -31,7 +31,7 @@
 
 .logo {
     height: 85px;
-
+    padding-left: 40px;
     background: rgb(29,122,217)
 }
 
@@ -55,13 +55,13 @@
     float: left;
 }
 .btn{
-    background-color: yellow;
+    background-color: #FF8C00;
     width: 100px;
     height: 30px;
     float: left;
 }
 .car{
-    background-color: yellow;
+    background-color: #FF8C00;
     float: right;
     width: 148px;
     margin-top: 25px;
@@ -71,17 +71,90 @@
 .cart{
     width: 47px;
     background: url(images/shapcar.jpg) 8px center  no-repeat;
-    border-right: 1px solid #ccc;
+    border-right: #E27A00 solid 1px;
     padding-left: 41px;
     float: left;
 }
 .count{
-    width: 50px;
+    width: 35px;
     background: url(images/sj.jpg) right no-repeat;
     float: left;
+    text-align: right;
+    padding-right: 17px;
 }
 .nav {
     height: 35px;
+    line-height: 35px;
+    background: rgb(19,105,192);
+    color: #fff;
+}
+.all{
+    width: 192px;
+    float: left;
+    text-align: center;
+    background: url(images/jt.jpg) 150px 16px no-repeat;
+}
+.nav_cd{
+    float: left;
+}
+.nav_cd li{
+    float: left;
+}
+.nav_cd li a{
+    display: inline-block;
+    height: 35px;
+    padding: 0  20px;
+    color: #fff;
+}
+.nav_cd li a:hover{
+    background-color: #4593FD;
+    /* cursor: pointer;  */
+}
+.cdx{
+    background-color: #4593FD; 
+}
 
-    background: rgb(19,105,192)
+.left_nav{
+    width: 190px;
+    background-color: #4593FD;
+}
+.item{
+    border-bottom: #3487F2 solid 1px;
+    border-top: #5AA1FE solid 1px;
+    
+}
+.item_dl{
+    padding: 13px 10px;
+    float: left;
+}
+.item_dl a{
+    color: #fff;
+    cursor: pointer;
+}
+.item_dl .sl{
+    font-size: 14px;
+    margin-right: 8px;
+}
+.item_dl .slk{
+    display: inline-block;
+    padding: 0 6px 1px 6px;
+    border-radius: 10px;
+    background-color: rgb(19,105,192);
+    text-decoration: underline;
+}
+.item_dl dd a{
+    margin-right: 8px;
+}
+.icon_sj{
+    float: right;
+    border-left: 5px solid #fff;
+    /* border-right: 0 ; */
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    margin-top: 23px;
+    margin-right: 13px;
+    /* transform: rotate(90deg); */
+}
+.title{
+   
 }
