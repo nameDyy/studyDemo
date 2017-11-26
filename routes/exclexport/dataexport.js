@@ -1,3 +1,4 @@
+
 var  express=require('express'),
      path=require('path'),
      fs=require('fs'),
@@ -9,7 +10,7 @@ var  express=require('express'),
 //                    {'XH':'xx','JH':'纯71-22','JB':'正钻井','WZRQ':'2017-11-20','WZSD':'2635','DIS':'13'},
 //                    {'XH':'xx','JH':'纯71-22','JB':'正钻井','WZRQ':'2017-11-20','WZSD':'2635','DIS':'13'}
 //                 ]
-// 范例: http://localhost:3001/
+// 范例: http://localhost:3000/
 router.get('/dataexport',function(req,res,next){
     // var dataArr =req.query.data;   // 传入的数据
     var tableName='压覆井位情况统计表.xlsx';  // excel中表头的名称
@@ -92,7 +93,7 @@ router.get('/dataexport',function(req,res,next){
         console.log("excel生成成功！");
         heightChange = null;
         res.download(path.resolve(exportPath),retfileName);
-        
+
         // 处理post请求参数过多
         // let url = path.join(downloadPath, fileName);;  // 相对路径 , 文件名 拼接
         // let result1 = new dbServiceResult();
