@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .con {
+            background: #ccc;
+            border: 1px solid #222;
+            width: 500px;
+            height: 200px;
+            resize: horizontal;
+            overflow: hidden;
+        }
+
+        /* 两列 左侧固定，右侧自适应，实现方式：float+margin */
+        .container1 .left {
+            background: red;
+            width: 100px;
+            float: left;
+            height: 100%;
+        }
+        .container1 .right {
+            background: blue;
+            word-wrap:break-word; 
+            margin-left:100px;
+            height: 100%;
+        }
+
+        /* 两列 左侧固定，右侧自适应，实现方式：position+margin */
+        .container2 {
+            position: relative;
+        }
+
+        .container2 .left{
+            background: red;
+            width: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        .container2 .right{
+            background: blue;
+            margin-left: 100px;
+            height: 100%;
+            word-wrap:break-word;
+        }
+
+        /* 两列 左侧固定，右侧自适应，实现方式：float+overflow */
+        .container3 .left{
+            background: red;
+            width: 100px;
+            float: left;
+            height: 100%;
+        }
+
+        .container3 .right{
+            background: blue;
+            overflow: hidden;
+            word-wrap:break-word;
+            height: 100%;
+        }
+
+        /* 两列 左侧固定，右侧自适应，实现方式：flex */
+        .container4 {
+            display: flex;
+        }
+        .container4 .left{
+            background: red;
+            width: 100px;
+        }
+        .container4 .right{
+            background: blue;
+            flex: 1;
+            word-wrap:break-word;
+        }
+
+        /* 三列 左侧两列固定，右侧自适应，实现方式：float+margin / overflow */
+        .container5 .left1{
+            background: red;
+            float: left;
+            width: 100px;
+        }
+        .container5 .left2{
+            background: yellow;
+            float: left;
+            width: 100px;
+        }
+        .container5 .right{
+            background: blue;
+            /* margin-left: 200px; */
+            overflow: hidden;
+            word-wrap:break-word;
+        }
+
+        /* 三列 侧边两列固定，中间自适应，实现方式：float+margin / overflow */
+        .container6 .left{
+            background: red;
+            float: left;
+            width: 100px;
+            height: 100%;
+        }
+        .container6 .right{
+            background: yellow;
+            float: right;
+            width: 100px;
+            height: 100%;
+        }
+        .container6 .center{
+            background: blue;
+            float: left;
+            /* width: calc(100% - 200px); */ /* IE11 */
+            width: 100%;
+            margin-right: -200px;
+            height: 100%;
+            word-wrap:break-word;
+        }
+        /* 多列 平均分布，实现方式：float+margin / overflow */
+        .container7 {
+        }
+        .container7 .left1{
+            background: red;
+            float: left;
+            width: 25%;
+            height: 100%;
+        }
+        .container7 .left2{
+            background: green;
+            float: left;
+            width: 25%;
+            height: 100%;
+        }
+        .container7 .left3{
+            background: yellow;
+            float: left;
+            width: 25%;
+            height: 100%;
+        }
+        .container7 .left4{
+            background: blue;
+            float: left;
+            width: 25%;
+            height: 100%;
+        }
+        /* flex测试 */
+        .container8 {
+            display: flex;
+            justify-content: center;
+        }
+
+        .container8 h3 {
+            display: flex;
+            align-items: center;
+            height: 10rem;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .container9 {
+                background: red;
+            }
+        }
+
+        @media only screen and (min-width:769px) {
+            .container9 {
+                color: blue;
+            }
+        }
+
+        @media only screen and (min-width:480px) and (max-width:768px)  {
+            .container9 {
+                color: #fff;
+            }
+        }
+
+        @media only screen and (max-width:479px) {
+            .container9 {
+                color: yellow;
+            }
+        }
+
+        .container10 {
+            display: flex;
+            /* flex-direction: row;
+            flex-wrap: wrap; */
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: center;
+            /* align-content: center; */
+        }
+
+        .container10 div {
+            flex: 1;
+            width: 100px;
+            /* flex-grow: 1; */
+            height: 2em;
+            background: red;
+        }
+
+        .container10 div {
+            margin: 5px;
+        }
+
+        .container11 .container110 {
+            margin: 10px;
+            position: absolute;
+            min-height: 150px;
+        }
+
+        .container11 ul {
+            float: left;
+            border: 1px solid #fff;
+        }
+
+        .container11 li {
+            float: left;
+            list-style: none;
+            display: block;
+            background: #eee;
+            padding-left: 20px;
+            padding-right: 20px;
+            line-height: 25px;
+            height: 25px;
+        }
+
+        .container11 li+li {
+            border-left: 1px solid #fff;
+        }
+
+        .container110 .content {
+            display: block;
+            background: #fff;
+            position: absolute;
+            top: 27px;
+            left:0;
+            bottom: 0;
+            right: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container1 con">
+        <div class="left">abc</div>
+        <div class="right">123456789123456789123456789123456789123456789123456789123456789123456789</div>
+    </div>
+    <div class="container2 con">
+        <div class="left">abc</div>
+        <div class="right">123456789123456789123456789123456789123456789123456789123456789123456789</div>
+    </div>
+    <div class="container3 con">
+        <div class="left">abc</div>
+        <div class="right">123456789123456789123456789123456789123456789123456789123456789123456789</div>
+    </div>
+    <div class="container4 con">
+        <div class="left">abc</div>
+        <div class="right">123456789123456789123456789123456789123456789123456789123456789123456789</div>
+    </div>
+    <div class="container5 con">
+        <div class="left1">abc</div>
+        <div class="left2">abc</div>
+        <div class="right">123456789123456789123456789123456789123456789123456789123456789123456789</div>
+    </div>
+    <div class="container6 con">
+        <div class="left">abc</div>
+        <div class="center">123456789123456789123456789123456789123456789123456789123456789123456789</div>
+        <div class="right">abc</div>
+    </div>
+    <div class="container7 con">
+        <div class="left1">abc</div>
+        <div class="left2">abc</div>
+        <div class="left3">abc</div>
+        <div class="left4">abc</div>
+    </div>
+    <div class="container8 con">
+        <h3>hello flex box</h3>
+    </div>
+    <div class="container9 con">
+        <h3>hello media query</h3>
+    </div>
+    <div class="container10 con">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div style="order:-1;align-self:flex-end;">4</div>
+    </div>
+    <div class="container11 con">
+        <div class="container110">
+            <ul>
+                <li>AAAA</li>
+                <li>BBBB</li>
+                <li>CCCC</li>
+            </ul>
+            <div class="content">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
