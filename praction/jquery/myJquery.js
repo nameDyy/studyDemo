@@ -78,11 +78,40 @@
             } 
         },
         prepend: function(str) {
-            if(typeof str==='string'){
-            
+            if(typeof str === 'string'){
+                var tempDiv = document.createElement('div');
+                this[0].insertBefore(tempDiv,this[0].firstChild);
+                tempDiv.outerHTML = str
+                
+                // innerHTML outerHTML  替换
+                // 获取  写入
+
             }else{
-                this[0].insertBefore(str,someNode.firstChild);
+                this[0].insertBefore(str,this[0].firstChild);
             }
+        },
+        after:function(str){
+            if(typeof str === 'string') {
+                this[0].parentNode.innerHTML = str
+            } else if( str.nodeType ) {
+                this[0].parentNode.appendChild(str)
+            } 
+        },
+        before:function(str){
+            if(typeof str === 'string') {
+
+            } else if( str.nodeType ) {
+                this[0].parentNode.insertBefore(str,this[0].parentNode.firstChild)
+            } 
+        },
+        empty:function(){
+            this[0].removeChild(this[0].firstChild)
+        },
+        html:function(){
+            this[0].innerHTML
+        },
+        text:function(){
+            this[0].innerText
         }
     }
     myJquery.fn.extend(dom)
