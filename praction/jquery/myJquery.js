@@ -92,25 +92,39 @@
         },
         after:function(str){
             // 在每个匹配的元素之后插入内容
+            // 首先两种情况考虑：1字符串 2dom
             if(typeof str === 'string') {
+                // 当参数是字符串的时候，思路是：创建一个元素插入到当前元素的后面，然后使用outHTML替换
                 var divDom=document.createElement('div');
-                this[0].appendChild(divDom)
+                this[0].parentNode.insertBefore(divDom,this[0].nextSimbling)
                 divDom.outerHTML=str;
             } else if( str.nodeType ) {
-                // this[0].parentNode.appendChild(str)
-                this[0].appendChild(str)
+                // 当参数是dom的时候，思路是：直接将这个元素插入到当前元素的后一个兄弟前面即可
+                this[0].parentNode.insertBefore(str,this[0].nextSimbling)
             } 
         },
         before:function(str){
             if(typeof str === 'string') {
-               
+                var divDom=document.createElement('div');
+                this[0].parentNode.insertBefore(divDom,this[0])
+                divDom.outerHTML=str;
             } else if( str.nodeType ) {
-                this[0].prentNode.insertBefore(str,this[0])
+                this[0].parentNode.insertBefore(str,this[0])
             } 
+        },
+
+        replaceAll: function(str){
+            this[0].parentNode.replaceChild(str, this[0]);
         },
         empty:function(){
             this[0].innerHTML="";
         },
+
+        remove:function(){
+            // 从DOM中删除所有匹配的元素
+            this[0].innerHTML="";
+        },
+
         html:function(){
            return this[0].innerHTML
         },

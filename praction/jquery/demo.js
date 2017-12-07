@@ -35,9 +35,13 @@ var dom = $('<div><span>9999</span></div><div><span>2222</span></div>');
 // $$('#mydiv').prepend('<div><span>2222</span></div><div><span>2222</span></div>')
 // $$('#mydiv').after('<div><span>000</span></div><div><span>000</span></div>')
 // $$('#mydiv').after(dom[0])
-$$('#mydiv').before(dom[0])
+// $$('#mydiv').before(dom[0])
 
 // $$('#dy1').empty()
 // console.log($$('#mydivfq').html());
 // console.log($$('#mydiv').text());
+
+var domtext=$('<span>hello</span>')
+$$('.mydiv').replaceAll(domtext[0])
+
 
