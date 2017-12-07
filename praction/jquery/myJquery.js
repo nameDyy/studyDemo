@@ -91,27 +91,31 @@
             }
         },
         after:function(str){
+            // 在每个匹配的元素之后插入内容
             if(typeof str === 'string') {
-                this[0].parentNode.innerHTML = str
+                var divDom=document.createElement('div');
+                this[0].appendChild(divDom)
+                divDom.outerHTML=str;
             } else if( str.nodeType ) {
-                this[0].parentNode.appendChild(str)
+                // this[0].parentNode.appendChild(str)
+                this[0].appendChild(str)
             } 
         },
         before:function(str){
             if(typeof str === 'string') {
-
+               
             } else if( str.nodeType ) {
-                this[0].parentNode.insertBefore(str,this[0].parentNode.firstChild)
+                this[0].prentNode.insertBefore(str,this[0])
             } 
         },
         empty:function(){
-            this[0].removeChild(this[0].firstChild)
+            this[0].innerHTML="";
         },
         html:function(){
-            this[0].innerHTML
+           return this[0].innerHTML
         },
         text:function(){
-            this[0].innerText
+           return this[0].innerText
         }
     }
     myJquery.fn.extend(dom)

@@ -29,15 +29,15 @@ $('#btn').on('click',function(){
 
 // $$('#mydiv').append('<div><span>2222</span></div><div><span>2222</span></div>')
 
-var dom = $('<div><span>9999</span></div><div><span>2222</span></div>')
+var dom = $('<div><span>9999</span></div><div><span>2222</span></div>');
 
 // $$('#mydiv').append(dom[0])
 // $$('#mydiv').prepend('<div><span>2222</span></div><div><span>2222</span></div>')
-// $$('#mydiv').after('<div><span>444</span></div><div><span>444</span></div>')
+// $$('#mydiv').after('<div><span>000</span></div><div><span>000</span></div>')
 // $$('#mydiv').after(dom[0])
-// $$('#mydiv').before(dom[0])
+$$('#mydiv').before(dom[0])
 
-$$('#dy1').empty()
-console.log($$('#mydivfq').html());
-console.log($$('#mydiv').text());
+// $$('#dy1').empty()
+// console.log($$('#mydivfq').html());
+// console.log($$('#mydiv').text());
 
