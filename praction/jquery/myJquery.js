@@ -113,16 +113,26 @@
             } 
         },
 
-        replaceAll: function(str){
-            this[0].parentNode.replaceChild(str, this[0]);
+        replaceWith: function(str){
+            for(var i=0,length=this.length;i<length;i++){
+                this[i].outerHTML=str;
+            }
         },
         empty:function(){
-            this[0].innerHTML="";
+            for(var i=0;i<this.length;i++){
+                this[i].innerHTML="";
+            }
         },
-
         remove:function(){
             // 从DOM中删除所有匹配的元素
-            this[0].innerHTML="";
+            for(var i=0;i<this.length;i++){
+                this[i].outerHTML="";
+            } 
+        },
+        clone:function() {
+            var a = this[0].cloneNode()
+            this[0] = a
+            return this
         },
 
         html:function(){

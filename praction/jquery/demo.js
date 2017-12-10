@@ -1,4 +1,9 @@
 
+$('ul li:last').addClass(function() {
+    return 'item-' + $(this).index();
+  });
+
+
 var myIpt = $$('#ipt')
 var myIpt2 = $('#ipt')
 var mySpan = $$('#myspan')
