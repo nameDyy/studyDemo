@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue基础例子</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+
+</head>
+
+<body>
+   <div id="example">
+       <p>{{message}}</p>
+       <p>{{reversedMessage}}</p>
+   </div>
+
+   <div id="watch-example">
+        <p>
+            <input v-model="question">
+        </p>
+        <p>{{answer}}</p>
+   </div>
+</body>
+
+<script>
+    var vm = new Vue({
+        el:"#example",
+        data:{
+            message:"hello"
+        },
+        computed:{
+            reversedMessage:function(){
+                return this.message.split("").reverse().join("")
+            }
+        }
+    });
+    console.log(vm.reversedMessage);   // olleh
+    vm.message="duanyun";
+    console.log(vm.reversedMessage);   // nuynaud
+
+
+    var watchExampleVM = new  Vue({
+        el:"#watch-example",
+        data:{
+            question:"",
+            answer:"我是第一个"
+        },
+        watch:{
+            question:function(newQuestion,oldQuestion){
+                this.answer="question发生改变,到我执行了";
+                this.getAnswer();
+            }
+        },
+        methods:{
+            getAnswer:_.debounce(
+                function(){
+                    if(this.question.indexOf("?")===-1){
+                        this.answer="if条件成立，我将执行";
+                        return;
+                    }
+                    this.answer="getAnswer函数调用，到我执行了";
+                    var vm = this;
+                    axios.get("https://yesno.wtf/api")
+                    .then(function(res){
+                        vm.answer = _.capitalize(res.data.answer)
+                    })
+                    .catch(function(err){
+                        vm.answer = "出错了"+err
+                    })
+                },500
+            )
+        }
+
+    });
+</script>
+
+</html>

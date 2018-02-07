@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue中Class属性</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+</head>
+
+<body>
+   <div id="example" class="static" v-bind:class="{active:isActive,'text-danger':hasError}">class</div>
+
+   <div id="example1" v-bind:class="classObject">class</div>
+   <div class="foo" v-bind:style="styleObject">style</div>
+
+   <template v-if="ok">
+        <h1>条件渲染v-if</h1>
+        <h1>Title</h1>
+   </template>
+
+   <template v-if="loginType==='username'">
+       <label>Username</label>
+       <input placeholder="your username" key="usernameInput">
+   </template>
+   <template v-else>
+        <label>Email</label>
+        <input placeholder="your email" key="emailInput">
+    </template>
+
+</body>
+
+<script>
+    var vm = new Vue({
+        el:".static",
+        data:{
+            isActive:true,
+            hasError:false
+        }
+    });
+
+    // class
+    var vm1 = new Vue({
+        el:"#example1",
+        data:{
+            isActive:true,
+            error:null
+        },
+        computed:{
+            classObject:function(){
+                return{
+                    active:this.isActive && !this.error,
+                    "text-danger":this.error && this.error.type === "fatal"
+                }
+            }
+        }
+    });
+
+    // style
+    var fooVm = new Vue({
+        el:".foo",
+        data:{
+            styleObject:{
+                color:"red",
+                fontSize:"30px"
+            }
+        }
+        // data:{
+        //     color:"red",
+        //     fontsize:"30px"
+        // },
+        // computed:{
+        //     classStyleFun:function(){
+        //         return{
+        //             activeColor:this.color,
+        //             fontSize:this.fontsize
+        //         }
+        //     }
+        // }
+    })
+
+</script>
+
+</html>
