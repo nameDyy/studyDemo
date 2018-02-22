@@ -11,48 +11,52 @@
 </head>
 
 <body>
-   <div id="example" class="static" v-bind:class="{active:isActive,'text-danger':hasError}">class</div>
+    <div id="example" class="static" v-bind:class="{active:isActive,'text-danger':hasError}">class</div>
 
-   <div id="example1" v-bind:class="classObject">class</div>
-   <div class="foo" v-bind:style="styleObject">style</div>
+    <div id="example1" v-bind:class="classObject">class</div>
+    <div class="foo" v-bind:style="styleObject">style</div>
 
-   <template v-if="ok">
-        <h1>条件渲染v-if</h1>
-        <h1>Title</h1>
-   </template>
-
-   <template v-if="loginType==='username'">
-       <label>Username</label>
-       <input placeholder="your username" key="usernameInput">
-   </template>
-   <template v-else>
-        <label>Email</label>
-        <input placeholder="your email" key="emailInput">
-    </template>
-
+    <div  id="tem">
+        <template v-if="ok">
+            <h1>条件渲染v-if</h1>
+            <h1>Title</h1>
+        </template>
+    </div>
+    <div id="testkey">
+        <template v-if="loginType==='username'">
+            <label>Username</label>
+            <input placeholder="your username" key="usernameInput">
+        </template>
+        <template v-else>
+            <label>Email</label>
+            <input placeholder="your email" key="emailInput">
+        </template>
+    </div>
 </body>
 
 <script>
+// http://localhost:3005/vuedemo3/
+
     var vm = new Vue({
-        el:".static",
-        data:{
-            isActive:true,
-            hasError:false
+        el: ".static",
+        data: {
+            isActive: true,
+            hasError: false
         }
     });
 
     // class
     var vm1 = new Vue({
-        el:"#example1",
-        data:{
-            isActive:true,
-            error:null
+        el: "#example1",
+        data: {
+            isActive: true,
+            error: null
         },
-        computed:{
-            classObject:function(){
-                return{
-                    active:this.isActive && !this.error,
-                    "text-danger":this.error && this.error.type === "fatal"
+        computed: {
+            classObject: function () {
+                return {
+                    active: this.isActive && !this.error,
+                    "text-danger": this.error && this.error.type === "fatal"
                 }
             }
         }
@@ -60,11 +64,11 @@
 
     // style
     var fooVm = new Vue({
-        el:".foo",
-        data:{
-            styleObject:{
-                color:"red",
-                fontSize:"30px"
+        el: ".foo",
+        data: {
+            styleObject: {
+                color: "red",
+                fontSize: "30px"
             }
         }
         // data:{
@@ -80,6 +84,23 @@
         //     }
         // }
     })
+
+    // v-if="ok"
+    var tem = new Vue({
+        el: "#tem",
+        data: {
+            ok: true
+        }
+    });
+
+    // key
+    var testkey = new Vue({
+        el: "#testkey",
+        data: {
+            loginType:""
+        }
+    });
+    
 
 </script>
 
