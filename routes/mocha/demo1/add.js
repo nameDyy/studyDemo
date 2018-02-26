@@ -12,4 +12,4 @@ function add(a, b){
  
 }
 
-module.exports =new  add();
+module.exports =add;

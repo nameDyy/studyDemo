@@ -5,10 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-var test = require('./routes/test');
-var dyce = require('./routes/dyce');
 
 var app = express();
 
@@ -26,10 +22,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'praction')));
 app.use(express.static(path.join(__dirname, 'vue')));
 
-app.use('/', index);
-app.use('/users', users);
-app.use('/test',test);
-app.use('/dyce',dyce);
+app.use('/', require('./routes/index'));
+app.use('/users', require('./routes/users'));
+app.use('/test',require('./routes/test'));
+app.use('/mocha',require('./routes/mocha/mocha'));
+app.use('/jest',require('./routes/jest/jest'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

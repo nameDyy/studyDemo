@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "set Port=3005 & node ./bin/www",
-    "browser-sync": "browser-sync start --proxy localhost:3005 --files praction/**/*.css,praction/**/*.html,praction/**/*.js"
+    "browser-sync": "browser-sync start --proxy localhost:3005 --files praction/**/*.css,praction/**/*.html,praction/**/*.js",
+    "test": "jest"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
@@ -20,6 +21,7 @@
     "serve-favicon": "~2.4.5"
   },
   "devDependencies": {
-    "browser-sync": "^2.18.13"
+    "browser-sync": "^2.18.13",
+    "jest": "^22.4.2"
   }
 }
