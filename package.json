@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "set Port=3006 & node ./bin/www", 
+    "start": "set Port=3006 & node ./bin/www",
     "browser-sync": "browser-sync start --proxy localhost:3005 --files praction/**/*.css,praction/**/*.html,praction/**/*.js",
     "test": "jest"
   },
