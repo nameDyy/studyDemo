@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue v-if,v-show,v-for</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <!-- http://localhost:3005/vue2.5/index06.html -->
+
+    <div id="root">
+       <div v-if="show">hello vue</div>
+       <!-- v-if dom节点移除 ，使用频率低时使用-->
+       <div v-show="show">hello vue</div>
+       <!-- v-show dom节点不移除，在标签上添加了style="display:none"-->
+       <button @click="handleClick">toggle</button>
+       <ul>
+           <li v-for="(item,index) of list" :key="index">{{item}}</li>
+       </ul>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#root",
+            data:{
+              show:true,
+              list:[1,2,3]
+            },
+            methods:{
+                handleClick(){
+                    this.show = !this.show;
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

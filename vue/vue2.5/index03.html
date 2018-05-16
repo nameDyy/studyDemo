@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue事件</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <!-- http://localhost:3005/vue2.5/index03.html -->
+
+    <div id="root">
+        <!-- <div v-text="content"></div>   -->
+         <!--v-text转义过后的内容 <h1>hello</h1> -->
+        <!-- <div v-html="content"></div> -->
+         <!--v-html未转义的内容  hello -->
+         <div @click ="handleClick">{{content}}</div>
+         <!-- v-on:click简写 @click -->
+    </div>
+
+    <script>
+        new Vue({
+            el:"#root",// id为root的挂载点
+            data:{
+                // content:"<h1>hello</h1>"
+                content:"hello"
+            },
+            methods:{ // methods形式定义事件
+                handleClick(){
+                    this.content="world"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

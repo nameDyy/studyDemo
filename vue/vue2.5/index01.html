@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue入门</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <!-- http://localhost:3005/vue2.5/index01.html -->
+    <div id="root">{{msg}}</div>
+
+    <script>
+        new Vue({
+            el:"#root",// id为root的挂载点
+            data:{
+                msg:"hello world"
+            }
+        })
+        // 如同于js中的写法：
+        // var dom=document.getElementById("root");
+        // dom.innerHTML="hello world";
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue挂载点,模板</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <!-- http://localhost:3005/vue2.5/index02.html -->
+
+    <!-- 挂载点， 模板， 实例之间的关系 -->
+    <div id="root">{{msg}}</div>
+
+    <script>
+        new Vue({
+            el:"#root",// id为root的挂载点
+            template:'<h1>hello {{msg}}</h1>', // 模板.挂载点内部内容
+            data:{
+                msg:"world"
+            }
+        })
+    </script>
+</body>
+</html>
